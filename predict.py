@@ -63,13 +63,14 @@ for img in os.listdir(data_dir):
     rgb_image = np.zeros((seg_map.shape[0], seg_map.shape[1], 3), dtype=np.uint8)
     for id_class in range(1, seg_map.max() + 1):
         rgb_image[seg_map == id_class] = [
-            np.random.randint(255),
-            np.random.randint(255),
-            np.random.randint(255),
+            255,
+            255,
+            255,
         ]
 
     # Create mixed image
-    mixed_image = (rgb_image / 2 + image / 2).astype(np.uint8)
+    # mixed_image = (rgb_image / 2 + image / 2).astype(np.uint8)
+    mixed_image = (rgb_image).astype(np.uint8)
 
     # Plot using matplotlib
     fig, axes = plt.subplots(1, 2, figsize=(12, 6))
