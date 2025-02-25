@@ -14,3 +14,5 @@ checkpoints/*.pt
 
 /data
 /demo
+
+/img_test
